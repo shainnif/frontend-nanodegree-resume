@@ -84,3 +84,6 @@ var projects = {
     console.log("shaine");
   }
 };
+
+var maps_api_key= "AIzaSyCUn3Afnok_9Ff3hQ1WlruvXmaKJuHOv1I";
+
