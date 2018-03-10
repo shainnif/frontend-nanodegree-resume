@@ -125,19 +125,19 @@ var projects = {
     },
   ],
   display: function () {
-    if ( projects.projects.length > 0){
+    if (projects.projects.length > 0) {
       $("#projects").append(HTMLprojectStart);
       projects.projects.forEach(function (project) {
         $(".project-entry:last").append(format(HTMLprojectTitle, project.title));
         $(".project-entry:last").append(format(HTMLprojectDates, project.dates));
         $(".project-entry:last").append(format(HTMLprojectDescription, project.description));
         $(".project-entry:last").append(format(HTMLprojectImage, project.images[0]));
-      })
+      });
     }
   }
 };
 
-var maps_api_key = "AIzaSyCUn3Afnok_9Ff3hQ1WlruvXmaKJuHOv1I";
+// var maps_api_key = "AIzaSyCUn3Afnok_9Ff3hQ1WlruvXmaKJuHOv1I";
 
 bio.display();
 education.display();
@@ -151,5 +151,13 @@ function format(stub, value) {
 }
 
 function getStub(lookup) {
-  return eval("HTML" + lookup);
+  var contactMap = {
+    mobile: HTMLmobile,
+    email: HTMLemail,
+    github: HTMLgithub,
+    twitter: HTMLtwitter,
+    location: HTMLlocation,
+  };
+
+  return contactMap[lookup];
 }
