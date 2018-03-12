@@ -23,8 +23,7 @@ var bio = {
     for (const key in bio.contacts) {
       if (bio.contacts.hasOwnProperty(key)) {
         var formattedContact = format(getStub(key), bio.contacts[key]);
-        $("#topContacts").append(formattedContact);
-        $("#footerContacts").append(formattedContact);
+        $("#topContacts","#footerContacts").append(formattedContact);
       }
     }
     if (bio.skills.length > 0) {
@@ -43,7 +42,7 @@ var education = {
       location: "Stirling",
       degree: "Msc(Hons) Information Technology",
       majors: ["Java", "C++", "Databases"],
-      years: "1998-1998",
+      dates: "Sept 1998 - Aug 1999",
       url: "https://www.stir.ac.uk/",
     },
     {
@@ -51,7 +50,7 @@ var education = {
       location: "Edinburgh",
       degree: "MA(Hons) Economics",
       majors: ["Microeconomics", "International Finance"],
-      years: "1994-1998",
+      dates: "Sept 1994 - June 1998",
       url: "https://www.hw.ac.uk/",
     },
   ],
@@ -59,7 +58,7 @@ var education = {
     {
       title: "Udacity Front-End Web Developer",
       school: "Udacity",
-      dates: "2015-Present",
+      dates: "Mar 2015 - Mar 2018",
       url: "https://www.udacity.com/",
     }
   ],
@@ -68,7 +67,7 @@ var education = {
       education.schools.forEach(function (school) {
         $("#education").append(HTMLschoolStart);
         $(".education-entry:last").append(format(HTMLschoolName, school.name) + format(HTMLschoolDegree, school.degree));
-        $(".education-entry:last").append(format(HTMLschoolDates, school.years));
+        $(".education-entry:last").append(format(HTMLschoolDates, school.dates));
         $(".education-entry:last").append(format(HTMLschoolLocation, school.location));
         $(".education-entry:last").append(format(HTMLschoolMajor, school.majors.join(", ")));
       });
@@ -90,14 +89,14 @@ var work = {
     {
       position: "Director",
       employer: "Carsift Ltd",
-      years: "2015-Current",
+      dates: "Jan 2015 - Current",
       location: "Newark",
       description: "Built some stuff to do with cars",
     },
     {
       position: "Director",
       employer: "SNI Services Limited",
-      years: "2008-Current",
+      dates: "March 2008 - Current",
       location: "London",
       description: "Consultancy for the Banking industry",
     }
@@ -107,7 +106,7 @@ var work = {
     if (work.jobs.length > 1) {
       work.jobs.forEach(function (job) {
         $(".work-entry:last").append(format(HTMLworkEmployer, job.employer) + format(HTMLworkTitle, job.position));
-        $(".work-entry:last").append(format(HTMLworkDates, job.years));
+        $(".work-entry:last").append(format(HTMLworkDates, job.dates));
         $(".work-entry:last").append(format(HTMLworkLocation, job.location));
         $(".work-entry:last").append(format(HTMLworkDescription, job.description));
       });
@@ -119,7 +118,7 @@ var projects = {
   projects: [
     {
       title: "Kubaru",
-      dates: "2012-2016",
+      dates: "Mar 2012 - Jan 2016",
       images: ["http://www.kubaru.org/images/logo.png"],
       description: "Microfinance Charity"
     },
